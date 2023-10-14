@@ -1,0 +1,139 @@
+<section>
+  <form class="form-control mt-5 p-4 bg-main-light shadow"  [formGroup]="registerForm" (ngSubmit)="(handleForm)">
+    <div class="form-item p-2">
+      <label for="name">Name:</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        class="form-control"
+      />
+
+      <div
+        *ngIf="
+          registerForm.get('name')?.touched && registerForm.get('name')?.errors
+        "
+        class="alert alert-danger text-center"
+      >
+        <p *ngIf="registerForm.get('name')?.getError('required')">
+          Name is required
+        </p>
+        <p *ngIf="registerForm.get('name')?.getError('minlength')">
+          Name min Length 3char
+        </p>
+        <p *ngIf="registerForm.get('name')?.getError('maxlength')">
+          Name max Length 3char
+        </p>
+      </div>
+    </div>
+    <div class="form-item p-2">
+      <label for="E-mail">E-mail :</label>
+      <input
+        formControlName="email"
+        id="E-mail"
+        type="email"
+        class="form-control"
+      />
+
+      <div
+        *ngIf="
+          registerForm.get('email')?.touched &&
+          registerForm.get('email')?.errors
+        "
+        class="alert alert-danger text-center"
+      >
+        <p *ngIf="registerForm.get('email')?.getError('required')">
+          Email is required
+        </p>
+        <p *ngIf="registerForm.get('name')?.getError('email')">
+          Email min Length 3char
+        </p>
+      </div>
+    </div>
+    <div class="form-item p-2">
+      <label for="Password">Password :</label>
+      <input
+        formControlName="password"
+        id="Password"
+        type="password"
+        class="form-control"
+      />
+
+      <div
+        *ngIf="
+          registerForm.get('password')?.touched &&
+          registerForm.get('password')?.errors
+        "
+        class="alert alert-danger text-center"
+      >
+        <p *ngIf="registerForm.get('password')?.getError('required')">
+          password is required
+        </p>
+        <p *ngIf="registerForm.get('password')?.getError('pattern')">
+          Password must be at least 6 char
+        </p>
+      </div>
+    </div>
+    <div class="form-item p-2">
+      <label for="RePassword">RePassword :</label>
+      <input
+        formControlName="rePassword"
+        id="RePassword"
+        type="password"
+        class="form-control"
+      />
+
+      <div
+        *ngIf="
+          registerForm.get('rePassword')?.touched &&
+          registerForm.get('rePassword')?.errors
+        "
+        class="alert alert-danger text-center"
+      >
+        <p *ngIf="registerForm.get('rePassword')?.getError('required')">
+          Repassword is required
+        </p>
+        <p *ngIf="registerForm.get('rePassword')?.getError('misMatch')">
+          rePAssword confirmation is incorrect
+        </p>
+      </div>
+    </div>
+    <div class="form-item p-2">
+      <label for="Phone">Phone :</label>
+      <input
+        formControlName="phone"
+        id="Phone"
+        type="tel"
+        class="form-control"
+      />
+
+      <div
+        *ngIf="
+          registerForm.get('phone')?.touched &&
+          registerForm.get('phone')?.errors
+        "
+        class="alert alert-danger text-center"
+      >
+        <p *ngIf="registerForm.get('phone')?.getError('required')">
+          phone is required
+        </p>
+        <p *ngIf="registerForm.get('phone')?.getError('pattern')">
+          phone must be start 01 egp code
+        </p>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center ">
+        <button (click)="handleForm()" class="btn btn-outline-success mt-3 w-50" type="submit">
+            Register
+      
+            <span *ngIf="isLoading">
+              <i class="fa-solid fa-spinner fa-spin"></i>
+            </span>
+          </button>
+          <p *ngIf="errMessage" class="alert alert-danger">{{ errMessage }}</p>
+    </div>
+
+
+  </form>
+</section>

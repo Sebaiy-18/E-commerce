@@ -1,0 +1,15 @@
+<section class="mt-5 p-3 container">
+    <div class="row g-4">
+        <div  [routerLink]="['/brandDetails',item._id ]"    *ngFor="let item of brandData" class="col-md-3 _card rounded-2">
+            <div class="card ">
+                <div class="card-img ">
+                    <img class="w-100   _img "  [src]="item.image" [alt]="item.name">
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="text-main">   {{item.name}}     </h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

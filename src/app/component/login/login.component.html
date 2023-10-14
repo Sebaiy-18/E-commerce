@@ -1,0 +1,42 @@
+<section>
+    <form class="form-control mt-5 p-4 bg-main-light shadow" [formGroup]="loginForm" (ngSubmit)="handleForm">
+
+
+        <div class="form-item p-2">
+            <label for="E-mail">E-mail :</label>
+            <input formControlName="email" id="E-mail" type="email" class="form-control" >
+        
+            <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors" class="alert alert-danger  text-center ">
+                <p *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+                <p *ngIf="loginForm.get('name')?.getError('email')">Email min Length 3char</p>
+            </div>
+        </div>
+        <div class="form-item p-2">
+            <label for="Password">Password :</label>
+            <input formControlName="password" id="Password" type="password" class="form-control" >
+        
+            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors" class="alert alert-danger  text-center ">
+                <p *ngIf="loginForm.get('password')?.getError('required')">password is required</p>
+                <p *ngIf="loginForm.get('password')?.getError('pattern')">Password must be at least 6 char</p>
+            </div>
+
+            <h4 routerLink="/forgotpassword" role="button" class="h5 text-main  btn">
+                Forgot Password
+            </h4>
+        </div>
+
+
+
+        <div class="d-flex justify-content-center">
+            <button   (click)="handleForm()"  class="btn btn-outline-success mt-3 w-50"  type="submit">
+                Login  
+                <span *ngIf="isLoading">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                </span>
+            </button>
+            <p  *ngIf="errMessage" class="alert alert-danger">  {{errMessage}} </p>
+        </div>
+
+
+    </form>
+</section>

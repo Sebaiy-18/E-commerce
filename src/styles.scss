@@ -1,0 +1,128 @@
+/* global style*/
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Roboto&display=swap');
+
+$main-color: #0aad0a;
+$light-color: #f0f3f2;
+$shadow:rgba(145,158,171,0.2) 0px 2px 4px -1px,
+        rgba(145,158,171,0.14) 0px 4px 5px 0px,
+        rgba(145,158,171,0.12) 0px 1px 10px 0px;
+$font-family: 'Encode Sans Expanded', sans-serif;
+$rating-color: #ffc908;
+$main-transition:0.8s;
+
+
+
+body{
+        font-family: $font-family;
+}
+.rating-color{
+        color:$rating-color;
+}
+.main-btn{
+        background-color: $main-color;
+        color:#fff;
+        padding: 5px 8px;
+        border-radius: 5px;
+        border: unset;
+        cursor: pointer;
+
+
+
+        &:disabled{
+                background-color: #0aad0a7d;
+                color:#dcdcdcb5;
+                cursor: not-allowed;
+        }
+
+}
+
+
+.active-color{
+        background-color: $main-color !important;
+        color: #fff !important;
+        border-radius: 5px;
+}
+.text-main{
+        color: $main-color;
+}
+.bg-main-light {
+        background-color: $light-color;
+}
+.font-sm{
+        font-size: 12px;
+}
+.product{
+        transition: all .5s;
+        cursor: pointer;
+        
+}
+.product:hover button {
+        transform: translateY(0);
+        opacity: 1;
+
+}
+
+button:hover {
+        background-color: $main-color;
+        filter: brightness(.9);
+        color: #fff;
+    }
+.product:hover{
+        // border: 1px solid $main-color;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px $main-color;
+}
+
+.slider-static{
+        padding: 10px;
+        margin: 10px;
+}
+
+
+
+.imgZoom{
+        transition: transform .5s; /* Animation */
+    
+}
+.imgZoom:hover{
+        transform: scale(1.1);
+}
+._card{
+        transition: all .5s;   
+}
+._card:hover{
+        // box-shadow: 1px 1px 10px #4fa74f;
+        filter: drop-shadow(1px 2px 5px #4fa74f);
+}
+._img{
+        object-position: center;
+        object-fit: cover;
+}
+._btn{
+        overflow: hidden;
+
+        &:hover{
+                .main-btn{
+                        transform: translateY(0);
+                        opacity: 1;
+
+  
+                }
+        }
+}
+
+.main-btn{
+        transform: translateY(150%);
+        transition: .5s;
+        opacity: 0;
+}
+
+.wish{
+        transition: all .5s;
+}
+.wish:hover{
+        filter: drop-shadow(1px 2px 5px red);
+
+}
+

@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand"  routerLink="/">
+            <img src="./assets/images/freshcart-logo.svg" alt="">
+        </a>
+
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link "routerLinkActive="active-color" routerLink="/home" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "routerLinkActive="active-color" routerLink="/cart" >cart</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link "routerLinkActive="active-color" routerLink="/product" >product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "routerLinkActive="active-color" routerLink="/categories" >categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "routerLinkActive="active-color" routerLink="/brands" >brands</a>
+                </li>
+
+
+
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-main" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-regular fa-circle-user fa-2x "></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" routerLink="/forgotpassword">Forgot Password</a></li>
+                    </ul>
+                  </li>
+
+                <li class="nav-item pe-4" role="button">
+                    <a routerLink="/wishlist" class="position-relative nav-link pe-3">
+                        <i class="fa-solid fa-heart fa-2x " style="color: red;"></i>
+                        <span class="badge bg-dark position-absolute top-0 end-0">0</span>
+                    </a>
+
+                </li>
+                <li class="nav-item pe-4" role="button">
+                    <a routerLink="/cart" class="position-relative nav-link pe-3">
+                        <i class="fa-solid fa-cart-plus fa-2x text-main"></i>
+                        <span class="badge bg-dark position-absolute top-0 end-0">  {{cartCount}}    </span>
+                    </a>
+
+                </li>
+                <li (click)="signOut()" class="nav-item" role="button">
+                    <span class="fw-bold fs-5">
+                        signOut
+                        <i class="fa-solid fa-right-from-bracket text-main"></i>
+                    </span>
+                </li>
+
+
+            </ul>
+
+        </div>
+  </div>
+</nav>

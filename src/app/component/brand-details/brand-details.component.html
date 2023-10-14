@@ -1,0 +1,15 @@
+<section>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6"  *ngFor="let item of brandData">
+                <div>
+                    <img  class="img-fluid w-100" [src]="item.image" alt="">
+                </div>
+                <div>
+                    <h1 class="text-main"> {{item.name}} </h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
